@@ -1,0 +1,6 @@
+Installation
+
+npx create-react-app sun-house-the-band
+cd sun-house-the-band
+npm install react-router-dom
+npm start
