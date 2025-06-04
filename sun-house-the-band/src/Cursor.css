@@ -1,0 +1,8 @@
+.custom-cursor {
+  position: fixed;
+  width: 40px; /* Adjust based on your image */
+  height: 40px;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.05s linear;
+}
