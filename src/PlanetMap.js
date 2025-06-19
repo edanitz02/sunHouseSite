@@ -3,11 +3,15 @@ import './PlanetMap.css';
 import planet1 from './planets/blue.webp';
 import planet2 from './planets/pinkOrb.jpg';
 import planet3 from './planets/purple.png';
+import planet4 from './planets/purpleStripe.webp';
+import planet5 from './planets/thinOrb.jpeg';
 
 const planets = [
-  { id: 1, img: planet1, top: '10%', left: '20%', info: 'This is Planet 1' },
-  { id: 2, img: planet2, top: '50%', left: '60%', info: 'This is Planet 2' },
-  { id: 3, img: planet3, top: '30%', left: '80%', info: 'This is Planet 3' },
+  { id: 1, img: planet1, top: '10%', left: '15%', info: 'This is Planet 1' },
+  { id: 2, img: planet2, top: '25%', left: '70%', info: 'This is Planet 2' },
+  { id: 3, img: planet3, top: '50%', left: '30%', info: 'This is Planet 3' },
+  { id: 4, img: planet4, top: '65%', left: '80%', info: 'This is Planet 4' },
+  { id: 5, img: planet5, top: '5%', left: '47%', info: 'This is Planet 5' }
 ];
 
 function PlanetMap() {

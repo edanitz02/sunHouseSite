@@ -5,6 +5,12 @@
   overflow: hidden;
 }
 
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 .planet {
   position: absolute;
   background: none;
@@ -16,10 +22,12 @@
 .planet img {
   width: 80px;
   transition: transform 0.3s ease;
+  animation: pulse 8s infinite ease-in-out;
 }
 
 .planet img:hover {
   transform: scale(1.2);
+  animation: none
 }
 
 .modal-backdrop {
