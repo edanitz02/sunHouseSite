@@ -6,6 +6,8 @@
 
 .socials-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 5px;
     margin-bottom: 1rem;
@@ -68,4 +70,17 @@
 .socials-container a:hover::after {
     transform: translateY(-42px) rotate(0);
     opacity: 1;
+}
+
+.seeMoreButton {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+    margin-bottom: 2rem;
 }
