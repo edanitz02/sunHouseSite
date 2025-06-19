@@ -5,13 +5,14 @@ import planet2 from './planets/pinkOrb.jpg';
 import planet3 from './planets/purple.png';
 import planet4 from './planets/purpleStripe.webp';
 import planet5 from './planets/thinOrb.jpeg';
+import {Sites, Socials, Merch, Games, Archives} from './Planets.js';
 
 const planets = [
-  { id: 1, img: planet1, top: '10%', left: '15%', info: 'This is Planet 1' },
-  { id: 2, img: planet2, top: '25%', left: '70%', info: 'This is Planet 2' },
-  { id: 3, img: planet3, top: '50%', left: '30%', info: 'This is Planet 3' },
-  { id: 4, img: planet4, top: '65%', left: '80%', info: 'This is Planet 4' },
-  { id: 5, img: planet5, top: '5%', left: '47%', info: 'This is Planet 5' }
+  { id: 1, img: planet1, top: '10%', left: '15%', Component: Archives },
+  { id: 2, img: planet2, top: '25%', left: '70%', Component: Socials },
+  { id: 3, img: planet3, top: '50%', left: '30%', Component: Merch },
+  { id: 4, img: planet4, top: '65%', left: '80%', Component: Games },
+  { id: 5, img: planet5, top: '5%', left: '47%', Component: Sites }
 ];
 
 function PlanetMap() {
@@ -33,8 +34,7 @@ function PlanetMap() {
       {activePlanet && (
         <div className="modal-backdrop" onClick={() => setActivePlanet(null)}>
           <div className="modal" onClick={e => e.stopPropagation()}>
-            <h2>Planet Info</h2>
-            <p>{activePlanet.info}</p>
+            {activePlanet.Component && <activePlanet.Component />}
             <button onClick={() => setActivePlanet(null)}>Close</button>
           </div>
         </div>
