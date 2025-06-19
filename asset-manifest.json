@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sunHouseSite/static/css/main.04260482.css",
-    "main.js": "/sunHouseSite/static/js/main.02db12d0.js",
+    "main.css": "/sunHouseSite/static/css/main.dc27351d.css",
+    "main.js": "/sunHouseSite/static/js/main.67003185.js",
     "static/js/453.3f41a618.chunk.js": "/sunHouseSite/static/js/453.3f41a618.chunk.js",
     "static/media/space-stars.avif": "/sunHouseSite/static/media/space-stars.343886e9e1e0cfb001ad.avif",
     "static/media/blue.webp": "/sunHouseSite/static/media/blue.90335f91ffed30977eb5.webp",
@@ -9,12 +9,12 @@
     "static/media/pinkOrb.jpg": "/sunHouseSite/static/media/pinkOrb.6faedff8e239fafed5a1.jpg",
     "static/media/purple.png": "/sunHouseSite/static/media/purple.50458c06ee79c29dbb47.png",
     "index.html": "/sunHouseSite/index.html",
-    "main.04260482.css.map": "/sunHouseSite/static/css/main.04260482.css.map",
-    "main.02db12d0.js.map": "/sunHouseSite/static/js/main.02db12d0.js.map",
+    "main.dc27351d.css.map": "/sunHouseSite/static/css/main.dc27351d.css.map",
+    "main.67003185.js.map": "/sunHouseSite/static/js/main.67003185.js.map",
     "453.3f41a618.chunk.js.map": "/sunHouseSite/static/js/453.3f41a618.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04260482.css",
-    "static/js/main.02db12d0.js"
+    "static/css/main.dc27351d.css",
+    "static/js/main.67003185.js"
   ]
 }
