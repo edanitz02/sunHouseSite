@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './PlanetMap.css';
 import planet1 from './planets/blue.webp';
-import planet2 from './planets/pinkOrb.jpg';
+import planet2 from './planets/pinkOrb.webp';
 import planet3 from './planets/purple.png';
 import planet4 from './planets/purpleStripe.webp';
-import planet5 from './planets/thinOrb.jpeg';
+import planet5 from './planets/thinOrb.webp';
 import {Sites, Socials, Merch, Games, Archives} from './Planets.js';
 
 const planets = [

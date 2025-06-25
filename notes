@@ -1,6 +1,20 @@
-Installation
+1) get gh-pages
 
-npx create-react-app sun-house-the-band
-cd sun-house-the-band
-npm install react-router-dom
-npm start
+npm install gh-pages --save-dev
+
+For deployment after commit/push --> npm run deploy
+
+2) pages
+- streaming sites (+ youtube music)
+- youtube/social medias (link tree)
+- merch/donations
+- mini games
+- archives (coming soon)
+
+- for professional inquiries, 'sunhousetheband@gmail.com'
+
+
+do a check every 0.1 seconds for cursor spot on screen
+if it is unchanged, do nothing
+else align fire and angle ship on difference,
+make size of fire relative to distance traveled
