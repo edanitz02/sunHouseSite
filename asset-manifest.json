@@ -1,21 +1,23 @@
 {
   "files": {
     "main.css": "/sunHouseSite/static/css/main.ad803735.css",
-    "main.js": "/sunHouseSite/static/js/main.e8c2aa0a.js",
+    "main.js": "/sunHouseSite/static/js/main.29cbe179.js",
     "static/js/453.3f41a618.chunk.js": "/sunHouseSite/static/js/453.3f41a618.chunk.js",
     "static/media/space-stars.avif": "/sunHouseSite/static/media/space-stars.343886e9e1e0cfb001ad.avif",
-    "static/media/fire.png": "/sunHouseSite/static/media/fire.48fe3eb7949418f16071.png",
-    "static/media/blue.webp": "/sunHouseSite/static/media/blue.90335f91ffed30977eb5.webp",
+    "static/media/blue.webp": "/sunHouseSite/static/media/blue.8d9862a26f29e4f2f85b.webp",
+    "static/media/thinOrb.webp": "/sunHouseSite/static/media/thinOrb.e4d9cbb3e88485c09d8a.webp",
+    "static/media/fire.webp": "/sunHouseSite/static/media/fire.462979db6fbbe6353521.webp",
+    "static/media/pinkOrb.webp": "/sunHouseSite/static/media/pinkOrb.f65fd3d2992d9aa3252a.webp",
+    "static/media/purple.png": "/sunHouseSite/static/media/purple.9748dd496624a8ec9b42.png",
     "static/media/purpleStripe.webp": "/sunHouseSite/static/media/purpleStripe.23fef769700fc72b7633.webp",
-    "static/media/pinkOrb.jpg": "/sunHouseSite/static/media/pinkOrb.6faedff8e239fafed5a1.jpg",
-    "static/media/purple.png": "/sunHouseSite/static/media/purple.50458c06ee79c29dbb47.png",
+    "static/media/rocketship.webp": "/sunHouseSite/static/media/rocketship.63167f4d4713f9920937.webp",
     "index.html": "/sunHouseSite/index.html",
     "main.ad803735.css.map": "/sunHouseSite/static/css/main.ad803735.css.map",
-    "main.e8c2aa0a.js.map": "/sunHouseSite/static/js/main.e8c2aa0a.js.map",
+    "main.29cbe179.js.map": "/sunHouseSite/static/js/main.29cbe179.js.map",
     "453.3f41a618.chunk.js.map": "/sunHouseSite/static/js/453.3f41a618.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ad803735.css",
-    "static/js/main.e8c2aa0a.js"
+    "static/js/main.29cbe179.js"
   ]
 }
