@@ -4,6 +4,8 @@
 
 body {
   background-image: url("../public/space-stars.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Orbitron', sans-serif;
   cursor: none;
 }

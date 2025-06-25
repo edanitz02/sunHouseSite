@@ -27,13 +27,13 @@ function RotatingCursor() {
         cursor.style.top = `${e.clientY}px`;
         cursor.style.transform = `translate(-50%, -50%) rotate(${deg}deg)`;
 
+        // Scale fire based on speed/distance
+        const fireScale = Math.min(dist / 8, 3.0); // cap growth
+
         // Offset fire position behind the ship
-        const fireOffset = 30; // distance behind the ship
+        const fireOffset = 10 + 20 * fireScale; // distance behind the ship
         const fireX = e.clientX - Math.cos(angle) * fireOffset;
         const fireY = e.clientY - Math.sin(angle) * fireOffset;
-
-        // Scale fire based on speed/distance
-        const fireScale = Math.min(dist / 8, 2.5); // cap growth
 
         fire.style.left = `${fireX}px`;
         fire.style.top = `${fireY}px`;
