@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+/* set the background container to the full page */
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.website {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background-image: url("../public/space-stars.avif");
   background-size: cover;

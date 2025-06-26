@@ -5,9 +5,9 @@ import Cursor from './Cursor.js';
 
 function App() {
   return (
-    <div>
+    <div class="website">
       <Cursor />
-      <BandName />
+      {/* <BandName /> */}
       <PlanetMap />
     </div>
   );

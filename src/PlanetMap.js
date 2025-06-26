@@ -8,11 +8,11 @@ import planet5 from './planets/thinOrb.webp';
 import {Sites, Socials, Merch, Games, Archives} from './Planets.js';
 
 const planets = [
-  { id: 1, img: planet1, top: '10%', left: '15%', Component: Archives },
-  { id: 2, img: planet2, top: '25%', left: '70%', Component: Socials },
-  { id: 3, img: planet3, top: '50%', left: '30%', Component: Merch },
-  { id: 4, img: planet4, top: '65%', left: '80%', Component: Games },
-  { id: 5, img: planet5, top: '5%', left: '47%', Component: Sites }
+  { id: 1, img: planet1, top: '20%', left: '15%', Component: Archives },
+  { id: 2, img: planet2, top: '35%', left: '70%', Component: Socials },
+  { id: 3, img: planet3, top: '60%', left: '30%', Component: Merch },
+  { id: 4, img: planet4, top: '75%', left: '80%', Component: Games },
+  { id: 5, img: planet5, top: '15%', left: '47%', Component: Sites }
 ];
 
 function PlanetMap() {
@@ -20,6 +20,7 @@ function PlanetMap() {
 
   return (
     <div className="space-container">
+      <h1>Sun House</h1>
       {planets.map(planet => (
         <button
           key={planet.id}

@@ -1,13 +1,21 @@
 .space-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+}
+
+/* Center the h1 absolutely inside the container */
+.space-container h1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.065); }
+  50% { transform: scale(1.067); }
   100% { transform: scale(1); }
 }
 
