@@ -36,7 +36,7 @@ function PlanetMap() {
         <div className="modal-backdrop" onClick={() => setActivePlanet(null)}>
           <div className="modal" onClick={e => e.stopPropagation()}>
             {activePlanet.Component && <activePlanet.Component />}
-            <button onClick={() => setActivePlanet(null)}>Close</button>
+            <button className="close" onClick={() => setActivePlanet(null)}>Close</button>
           </div>
         </div>
       )}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Game } from './Game.js';
 import './Planets.css';
 import aMusic from './planets/am-music.jpeg';
 
@@ -92,7 +93,10 @@ export function Merch() {
 export function Games() {
     return (
         <div>
-            <p>Coming soon... Mini Games!</p>
+            <h2>Mini Games</h2>
+            <div class="game-container">
+                <Game />
+            </div>
         </div>
     )
 }
