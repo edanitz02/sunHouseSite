@@ -1,6 +1,30 @@
 canvas {
     width: 100%;
     height: 100%;
+    max-width: 800px;
     display: block;
-    background-color: #222; /* optional fallback color */
+    background-color: #222; /* fallback color */
+}
+
+.home-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: none;
+    background-color: #14213d;
+    color: #fff;
+}
+
+.play-button {
+    background-color: #2a9d8f;
+    color: #fff;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
