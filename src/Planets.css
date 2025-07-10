@@ -7,7 +7,7 @@
     width: 50vw;
     height: calc(50vw * 0.5625); /* 16:9 ratio */
     max-width: 800px;
-    max-height: 600px;
+    max-height: 450px;
     background-color: #111;
     display: flex;
     align-items: center;

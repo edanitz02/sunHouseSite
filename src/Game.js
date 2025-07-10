@@ -13,7 +13,7 @@ function drawButton(ctx, img, x, y, size, label) {
 
 function buildHome(ctx, assets, setScreen) {
     // draw background image
-    ctx.drawImage(assets.background, 0, 0, 800, 600);
+    ctx.drawImage(assets.background, 0, 0, 800, 450);
     // draw title
     ctx.strokeStyle = "#0492c2";
     ctx.fillStyle = "#0492c2";
@@ -25,9 +25,9 @@ function buildHome(ctx, assets, setScreen) {
 
     // define buttons
     const buttons = [
-        { label: "Play", x: 350, y: 200, screen: "levelSelect" },
-        { label: "Settings", x: 350, y: 320, screen: "settings" },
-        { label: "How to Play", x: 350, y: 440, screen: "howTo" },
+        { label: "Play", x: 150, y: 250, screen: "levelSelect" },
+        { label: "Settings", x: 350, y: 250, screen: "settings" },
+        { label: "How to Play", x: 550, y: 250, screen: "howTo" },
     ];
     // draw buttons and set click targets
     buttons.forEach(({ label, x, y, screen }) => {
@@ -37,25 +37,57 @@ function buildHome(ctx, assets, setScreen) {
 }
 
 function buildSettings(ctx, assets, setScreen) {
-    ctx.drawImage(assets.background, 0, 0, 800, 600);
-    ctx.fillStyle = "white";
-    ctx.font = "30px Arial";
+    // background image
+    ctx.drawImage(assets.background, 0, 0, 800, 450);
+    // title
+    ctx.fillStyle = "#0382c2";
+    ctx.font = "5rem Fira Sans";
+    ctx.textAlign = "center";
     ctx.fillText("Settings", 400, 100);
-    drawButton(ctx, assets.button, 350, 500, 100, "Back");
-    assets.clickTargets.push({ x: 350, y: 500, width: 100, height: 100, action: () => setScreen("home") });
+
+    // set buttons
+    // TODO: switch key controls
+    // TODO: volume controls
+    drawButton(ctx, assets.button, 350, 350, 100, "Back");
+    assets.clickTargets.push({ x: 350, y: 350, width: 100, height: 100, action: () => setScreen("home") });
 }
 
 function buildHowTo(ctx, assets, setScreen) {
-    ctx.drawImage(assets.background, 0, 0, 800, 600);
-    ctx.fillStyle = "white";
-    ctx.font = "20px Arial";
-    ctx.fillText("Tap space to flap. Avoid pipes.", 400, 300);
-    drawButton(ctx, assets.button, 350, 500, 100, "Back");
-    assets.clickTargets.push({ x: 350, y: 500, width: 100, height: 100, action: () => setScreen("home") });
+    // background image
+    ctx.drawImage(assets.background, 0, 0, 800, 450);
+    // title
+    ctx.fillStyle = "#0382c2";
+    ctx.font = "5rem Fira Sans";
+    ctx.textAlign = "center";
+    ctx.fillText("How To Play", 400, 100);
+    // write game rules
+    ctx.fillStyle = "#2982c2";
+    ctx.font = "1.5rem Arial";
+    ctx.fillText("Can you read drumming sheet music?", 400, 175);
+    ctx.fillText("You'll be pressing 'w', 'p', and 'space' in time with the song.", 400, 225);
+    ctx.fillText("'w' is snare, 'p' is cymbal, and 'space' is bass drum.", 400, 275);
+    // back button
+    drawButton(ctx, assets.button, 350, 350, 100, "Back");
+    assets.clickTargets.push({ x: 350, y: 350, width: 100, height: 100, action: () => setScreen("home") });
 }
 
-function buildLevelSelect(ctx, backImage) {
-
+function buildLevelSelect(ctx, assets, setScreen) {
+    // background image
+    ctx.drawImage(assets.background, 0, 0, 800, 450);
+    // define buttons
+    const buttons = [
+        { label: "Home", x: 0, y: 0, size: 30, screen: "home" },
+        { label: "1", x: 350, y: 320, size: 40, screen: "game1" },
+        { label: "3", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "2", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "4", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "5", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "6", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "7", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "8", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "9", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "10", x: 350, y: 440, size: 40, screen: "home" },
+    ];
 }
 
 export function Game() {
@@ -63,7 +95,7 @@ export function Game() {
     const [screen, setScreen] = useState("home"); // keeps track of which screen
 
     // height and width
-    const gameHeight = 600;
+    const gameHeight = 450;
     const gameWidth = 800;
 
     // load images in assets array

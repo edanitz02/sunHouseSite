@@ -93,7 +93,7 @@ export function Merch() {
 export function Games() {
     return (
         <div>
-            <h2>Mini Games</h2>
+            <h2>Into the Games</h2>
             <div class="game-container">
                 <Game />
             </div>
