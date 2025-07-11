@@ -75,19 +75,26 @@ function buildLevelSelect(ctx, assets, setScreen) {
     // background image
     ctx.drawImage(assets.background, 0, 0, 800, 450);
     // define buttons
+    // even spacing x: 83, 226, 369, 512, 655, y: 110, 280
     const buttons = [
-        { label: "Home", x: 0, y: 0, size: 30, screen: "home" },
-        { label: "1", x: 350, y: 320, size: 40, screen: "game1" },
-        { label: "3", x: 350, y: 440, size: 40, screen: "home" },
-        { label: "2", x: 350, y: 440, size: 40, screen: "home" },
-        { label: "4", x: 350, y: 440, size: 40, screen: "home" },
-        { label: "5", x: 350, y: 440, size: 40, screen: "home" },
-        { label: "6", x: 350, y: 440, size: 40, screen: "home" },
-        { label: "7", x: 350, y: 440, size: 40, screen: "home" },
-        { label: "8", x: 350, y: 440, size: 40, screen: "home" },
-        { label: "9", x: 350, y: 440, size: 40, screen: "home" },
-        { label: "10", x: 350, y: 440, size: 40, screen: "home" },
+        { label: "Back", x: 0, y: 0, size: 50, screen: "home" },
+        { label: "1", x: 84, y: 92, size: 60, screen: "game1" },
+        { label: "3", x: 223, y: 116, size: 60, screen: "home" },
+        { label: "2", x: 370, y: 101, size: 60, screen: "home" },
+        { label: "4", x: 516, y: 86, size: 60, screen: "home" },
+        { label: "5", x: 649, y: 139, size: 60, screen: "home" },
+        { label: "6", x: 85, y: 299, size: 60, screen: "home" },
+        { label: "7", x: 231, y: 265, size: 60, screen: "home" },
+        { label: "8", x: 361, y: 269, size: 60, screen: "home" },
+        { label: "9", x: 508, y: 280, size: 60, screen: "home" },
+        { label: "10", x: 657, y: 296, size: 60, screen: "home" },
     ];
+
+    // draw buttons and set click targets
+    buttons.forEach(({ label, x, y, size, screen }) => {
+        drawButton(ctx, assets.button, x, y, size, label);
+        assets.clickTargets.push({ x, y, width: size, height: size, action: () => setScreen(screen) });
+    });
 }
 
 export function Game() {
@@ -125,6 +132,7 @@ export function Game() {
                 if (screen === "home") buildHome(ctx, a, setScreen);
                 else if (screen === "settings") buildSettings(ctx, a, setScreen);
                 else if (screen === "howTo") buildHowTo(ctx, a, setScreen);
+                else if (screen === "levelSelect") buildLevelSelect(ctx, a, setScreen);
                 else ctx.fillText("Unknown screen", 400, 300);
             };
 
