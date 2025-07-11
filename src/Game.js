@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import './Game.css';
-import background from './planets/game-background.jpg';
-import levelButton from './planets/levelButton.jpeg';
+import background from './planets/game/game-background.jpg';
+import levelButton from './planets/game/levelButton.jpeg';
+import levelBackground from './planets/game/levelBackground.jpg';
+import rocketship from './planets/rocketship.webp';
+import { Game1 } from './Levels.js';
 
 function drawButton(ctx, img, x, y, size, label) {
     ctx.drawImage(img, x, y, size, size);
@@ -66,6 +69,8 @@ function buildHowTo(ctx, assets, setScreen) {
     ctx.fillText("Can you read drumming sheet music?", 400, 175);
     ctx.fillText("You'll be pressing 'w', 'p', and 'space' in time with the song.", 400, 225);
     ctx.fillText("'w' is snare, 'p' is cymbal, and 'space' is bass drum.", 400, 275);
+    ctx.font = "1rem Arial";
+    ctx.fillText("There's totally gravity in space..", 400, 315);
     // back button
     drawButton(ctx, assets.button, 350, 350, 100, "Back");
     assets.clickTargets.push({ x: 350, y: 350, width: 100, height: 100, action: () => setScreen("home") });
@@ -85,7 +90,7 @@ function buildLevelSelect(ctx, assets, setScreen) {
         { label: "5", x: 649, y: 139, size: 60, screen: "home" },
         { label: "6", x: 85, y: 299, size: 60, screen: "home" },
         { label: "7", x: 231, y: 265, size: 60, screen: "home" },
-        { label: "8", x: 361, y: 269, size: 60, screen: "home" },
+        { label: "8", x: 361, y: 305, size: 60, screen: "home" },
         { label: "9", x: 508, y: 280, size: 60, screen: "home" },
         { label: "10", x: 657, y: 296, size: 60, screen: "home" },
     ];
@@ -95,6 +100,16 @@ function buildLevelSelect(ctx, assets, setScreen) {
         drawButton(ctx, assets.button, x, y, size, label);
         assets.clickTargets.push({ x, y, width: size, height: size, action: () => setScreen(screen) });
     });
+}
+
+function selectGameLevel(screen, canvas, ctx, assets, setScreen) {
+    switch (screen) {
+        case "game1":
+            Game1(canvas, ctx, assets, setScreen);
+            break;
+        default:
+            console.log("No level selected");
+    }
 }
 
 export function Game() {
@@ -109,6 +124,8 @@ export function Game() {
     const assets = useRef({
         background: new Image(),
         button: new Image(),
+        levelBackground: new Image(),
+        rocketship: new Image(),
         clickTargets: [],
     });
 
@@ -133,15 +150,18 @@ export function Game() {
                 else if (screen === "settings") buildSettings(ctx, a, setScreen);
                 else if (screen === "howTo") buildHowTo(ctx, a, setScreen);
                 else if (screen === "levelSelect") buildLevelSelect(ctx, a, setScreen);
+                else if (screen.startsWith("game")) selectGameLevel(screen, canvas, ctx, a, setScreen); // choose which level to load
                 else ctx.fillText("Unknown screen", 400, 300);
             };
 
-            // only draw once both images are loaded
-            if (a.background.complete && a.button.complete) {
+            // only draw once all images are loaded
+            if (a.background.complete && a.button.complete && a.levelBackground.complete && a.rocketship.complete) {
                 render();
             } else {
                 a.background.onload = render;
                 a.button.onload = render;
+                a.levelBackground.onload = render;
+                a.rocketship.onload = render;
             }
 
             // set the places on the canvas where clicks do stuff
@@ -181,9 +201,11 @@ export function Game() {
     useEffect(() => {
         assets.current.background.src = background;
         assets.current.button.src = levelButton;
+        assets.current.levelBackground.src = levelBackground;
+        assets.current.rocketship.src = rocketship;
     }, []);
 
-
+    // put a canvas in the dom
     return (
         <canvas ref={game}></canvas>
     );
