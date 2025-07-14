@@ -4,14 +4,14 @@ import background from './planets/game/game-background.jpg';
 import levelButton from './planets/game/levelButton.jpeg';
 import levelBackground from './planets/game/levelBackground.jpg';
 import rocketship from './planets/rocketship.webp';
-import { Game1 } from './Levels.js';
+import { Game1, tutorial } from './Levels.js';
 
-function drawButton(ctx, img, x, y, size, label) {
-    ctx.drawImage(img, x, y, size, size);
+function drawButton(ctx, img, x, y, width, height, label) {
+    ctx.drawImage(img, x, y, width, height);
     ctx.fillStyle = "white";
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
-    ctx.fillText(label, x + size / 2, y + size / 2 + 6);
+    ctx.fillText(label, x + width / 2, y + height / 2 + 6);
 }
 
 function buildHome(ctx, assets, setScreen) {
@@ -22,20 +22,21 @@ function buildHome(ctx, assets, setScreen) {
     ctx.fillStyle = "#0492c2";
     ctx.font = "5rem Droid Sans"
     ctx.textAlign = "center";
-    ctx.fillText("Zach Zach hcaZ", 400, 125); // into the games
+    ctx.fillText("Fun House", 400, 125); // Zach Zach hcaZ
     ctx.font = "5.2rem Droid Sans";
-    ctx.strokeText("Zach Zach hcaZ", 400, 128);
+    ctx.strokeText("Fun House", 400, 128);
 
-    // define buttons
+    // define buttons and layout of buttons
     const buttons = [
-        { label: "Play", x: 150, y: 250, screen: "levelSelect" },
-        { label: "Settings", x: 350, y: 250, screen: "settings" },
-        { label: "How to Play", x: 550, y: 250, screen: "howTo" },
+        { label: "Play", x: 310, y: 200, width: 180, height: 100, screen: "levelSelect" },
+        { label: "Settings", x: 100, y: 325, width: 150, height: 60, screen: "settings" },
+        { label: "Offline Play", x: 325, y: 325, width: 150, height: 60, screen: "tutorial" },
+        { label: "How to Play", x: 550, y: 325, width: 150, height: 60, screen: "howTo" },
     ];
     // draw buttons and set click targets
-    buttons.forEach(({ label, x, y, screen }) => {
-        drawButton(ctx, assets.button, x, y, 100, label);
-        assets.clickTargets.push({ x, y, width: 100, height: 100, action: () => setScreen(screen) });
+    buttons.forEach(({ label, x, y, width, height, screen }) => {
+        drawButton(ctx, assets.button, x, y, width, height, label);
+        assets.clickTargets.push({ x, y, width: width, height: height, action: () => setScreen(screen) });
     });
 }
 
@@ -51,7 +52,7 @@ function buildSettings(ctx, assets, setScreen) {
     // set buttons
     // TODO: switch key controls
     // TODO: volume controls
-    drawButton(ctx, assets.button, 350, 350, 100, "Back");
+    drawButton(ctx, assets.button, 350, 350, 100, 100, "Back");
     assets.clickTargets.push({ x: 350, y: 350, width: 100, height: 100, action: () => setScreen("home") });
 }
 
@@ -72,7 +73,7 @@ function buildHowTo(ctx, assets, setScreen) {
     ctx.font = "1rem Arial";
     ctx.fillText("There's totally gravity in space..", 400, 315);
     // back button
-    drawButton(ctx, assets.button, 350, 350, 100, "Back");
+    drawButton(ctx, assets.button, 350, 350, 100, 100, "Back");
     assets.clickTargets.push({ x: 350, y: 350, width: 100, height: 100, action: () => setScreen("home") });
 }
 
@@ -82,23 +83,23 @@ function buildLevelSelect(ctx, assets, setScreen) {
     // define buttons
     // even spacing x: 83, 226, 369, 512, 655, y: 110, 280
     const buttons = [
-        { label: "Back", x: 0, y: 0, size: 50, screen: "home" },
-        { label: "1", x: 84, y: 92, size: 60, screen: "game1" },
-        { label: "3", x: 223, y: 116, size: 60, screen: "home" },
-        { label: "2", x: 370, y: 101, size: 60, screen: "home" },
-        { label: "4", x: 516, y: 86, size: 60, screen: "home" },
-        { label: "5", x: 649, y: 139, size: 60, screen: "home" },
-        { label: "6", x: 85, y: 299, size: 60, screen: "home" },
-        { label: "7", x: 231, y: 265, size: 60, screen: "home" },
-        { label: "8", x: 361, y: 305, size: 60, screen: "home" },
-        { label: "9", x: 508, y: 280, size: 60, screen: "home" },
-        { label: "10", x: 657, y: 296, size: 60, screen: "home" },
+        { label: "Back", x: 0, y: 0, width: 65, height: 50, screen: "home" },
+        { label: "1", x: 84, y: 92, width: 60, height: 60, screen: "game1" },
+        { label: "3", x: 223, y: 116, width: 60, height: 60, screen: "home" },
+        { label: "2", x: 370, y: 101, width: 60, height: 60, screen: "home" },
+        { label: "4", x: 516, y: 86, width: 60, height: 60, screen: "home" },
+        { label: "5", x: 649, y: 139, width: 60, height: 60, screen: "home" },
+        { label: "6", x: 85, y: 299, width: 60, height: 60, screen: "home" },
+        { label: "7", x: 231, y: 265, width: 60, height: 60, screen: "home" },
+        { label: "8", x: 361, y: 305, width: 60, height: 60, screen: "home" },
+        { label: "9", x: 508, y: 280, width: 60, height: 60, screen: "home" },
+        { label: "10", x: 657, y: 296, width: 60, height: 60, screen: "home" },
     ];
 
     // draw buttons and set click targets
-    buttons.forEach(({ label, x, y, size, screen }) => {
-        drawButton(ctx, assets.button, x, y, size, label);
-        assets.clickTargets.push({ x, y, width: size, height: size, action: () => setScreen(screen) });
+    buttons.forEach(({ label, x, y, width, height, screen }) => {
+        drawButton(ctx, assets.button, x, y, width, height, label);
+        assets.clickTargets.push({ x, y, width: width, height: height, action: () => setScreen(screen) });
     });
 }
 
@@ -150,6 +151,7 @@ export function Game() {
                 else if (screen === "settings") buildSettings(ctx, a, setScreen);
                 else if (screen === "howTo") buildHowTo(ctx, a, setScreen);
                 else if (screen === "levelSelect") buildLevelSelect(ctx, a, setScreen);
+                else if (screen === "tutorial") tutorial(canvas, ctx, a, setScreen);
                 else if (screen.startsWith("game")) selectGameLevel(screen, canvas, ctx, a, setScreen); // choose which level to load
                 else ctx.fillText("Unknown screen", 400, 300);
             };

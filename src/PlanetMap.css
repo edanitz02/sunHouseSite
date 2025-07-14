@@ -72,3 +72,9 @@
 .close:hover {
   background-color: #f1959b;
 }
+
+.radio {
+  background-color: transparent;
+  border: none;
+  cursor: none;
+}

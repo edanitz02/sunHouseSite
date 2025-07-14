@@ -5,17 +5,10 @@ import Cursor from './Cursor.js';
 
 function App() {
   return (
-    <div class="website">
+    <div className="website">
       <Cursor />
-      {/* <BandName /> */}
       <PlanetMap />
     </div>
-  );
-}
-
-function BandName() {
-  return (
-    <h1>Sun House</h1>
   );
 }
 
