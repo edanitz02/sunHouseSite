@@ -4,6 +4,7 @@ import background from './planets/game/game-background.jpg';
 import levelButton from './planets/game/levelButton.jpeg';
 import levelBackground from './planets/game/levelBackground.jpg';
 import rocketship from './planets/rocketship.webp';
+import totalBack from './planets/game/fullBack.png';
 import { Game1, tutorial } from './Levels.js';
 
 function drawButton(ctx, img, x, y, width, height, label) {
@@ -127,6 +128,7 @@ export function Game() {
         button: new Image(),
         levelBackground: new Image(),
         rocketship: new Image(),
+        back: new Image(),
         clickTargets: [],
     });
 
@@ -157,13 +159,14 @@ export function Game() {
             };
 
             // only draw once all images are loaded
-            if (a.background.complete && a.button.complete && a.levelBackground.complete && a.rocketship.complete) {
+            if (a.background.complete && a.button.complete && a.levelBackground.complete && a.rocketship.complete && a.back.complete) {
                 render();
             } else {
                 a.background.onload = render;
                 a.button.onload = render;
                 a.levelBackground.onload = render;
                 a.rocketship.onload = render;
+                a.back.onload = render;
             }
 
             // set the places on the canvas where clicks do stuff
@@ -205,6 +208,7 @@ export function Game() {
         assets.current.button.src = levelButton;
         assets.current.levelBackground.src = levelBackground;
         assets.current.rocketship.src = rocketship;
+        assets.current.back.src = totalBack;
     }, []);
 
     // put a canvas in the dom
